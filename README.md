@@ -70,8 +70,7 @@ pktparser.py is an interactive shell used for parsing through pcaps. As configur
     pktparser>>> stateful
     The total stateful connections in this pcap is 353
 
-## Print all packets. 
-## Comma separate where first field is packet number, second is packet details: 
+## Print all packets, comma separate where first field is packet number, second is packet details: 
 
     pktparser>>> printall
     0,Ether / IP / TCP 10.0.0.35:41238 > 178.255.83.1:http S
@@ -95,16 +94,6 @@ pktparser.py is an interactive shell used for parsing through pcaps. As configur
     0090   78 38 36 5F 36 34 3B 20  72 76 3A 34 33 2E 30 29   x86_64; rv:43.0)
 
     
-## All UserAgents in the pcap, 
-## Comma separated as packet sequence number, timestamp, UA, Destination IP: 
-
-    pktparser>>> uaall
-    3,1485402924.85,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,178.255.83.1
-    14,1485402926.32,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,151.101.0.73
-    34,1485402926.41,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,151.101.0.73
-    53,1485402926.42,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,151.101.0.73
-    56,1485402926.43,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,151.101.0.73
-    121,1485402926.52,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,23.207.174.1
 
 ## Detailed packet info, scapy style:
 
@@ -131,14 +120,26 @@ pktparser.py is an interactive shell used for parsing through pcaps. As configur
             sport     = 41238
             dport     = http
 
+## All UserAgents in the pcap, comma separated as packet sequence number, timestamp, UA, Destination IP: 
+
+
+    pktparser>>> uaall
+    3,1485402924.85,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,178.255.83.1
+    14,1485402926.32,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,151.101.0.73
+    34,1485402926.41,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,151.101.0.73
+    53,1485402926.42,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,151.101.0.73
+    56,1485402926.43,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,151.101.0.73
+    121,1485402926.52,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,23.207.174.1
+
 
 ## Unique UserAgents in the pcap: 
+
 
     pktparser>>> uaunique
     Vary: Accept-Encoding, User-Agent
     Vary: User-Agent
     User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4
-
+    
 
 ## Http get requests: 
 
