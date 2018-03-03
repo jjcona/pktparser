@@ -3,7 +3,7 @@
 
 pktparser.py is an interactive shell used for parsing through pcaps. As configured the intention is to assist with finding IOCs in pcaps, but I plan on adding more functionality that might be useful for pentesters. 
 
-## Some Examples: 
+## Examples: 
 
     python pktparser.py 
     
@@ -37,7 +37,7 @@ pktparser.py is an interactive shell used for parsing through pcaps. As configur
     
     pktparser>>>
 
-## Show available commands: 
+## Get help: 
 
     pktparser>>> help
     
@@ -70,7 +70,8 @@ pktparser.py is an interactive shell used for parsing through pcaps. As configur
     pktparser>>> stateful
     The total stateful connections in this pcap is 353
 
-## Print all packets. Comma separate where first field is packet number, second is packet details: 
+## Print all packets. 
+## Comma separate where first field is packet number, second is packet details: 
 
     pktparser>>> printall
     0,Ether / IP / TCP 10.0.0.35:41238 > 178.255.83.1:http S
@@ -79,7 +80,7 @@ pktparser.py is an interactive shell used for parsing through pcaps. As configur
     3,Ether / IP / TCP 10.0.0.35:41238 > 178.255.83.1:http PA / Raw
     4,Ether / IP / TCP 178.255.83.1:http > 10.0.0.35:41238 A
  
-## See packet in hex, by number: 
+## Packet details in hex, by number: 
 
     pktparser>>> pkthex 3
     0000   E0 3F 49 9F 18 A8 00 0C  29 E0 CF E8 08 00 45 00   .?I.....).....E.
@@ -94,7 +95,8 @@ pktparser.py is an interactive shell used for parsing through pcaps. As configur
     0090   78 38 36 5F 36 34 3B 20  72 76 3A 34 33 2E 30 29   x86_64; rv:43.0)
 
     
-## See all UserAgents in the pcap, comma separated as packet sequence number, timestamp, UA, Destination IP: 
+## All UserAgents in the pcap, 
+## Comma separated as packet sequence number, timestamp, UA, Destination IP: 
 
     pktparser>>> uaall
     3,1485402924.85,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,178.255.83.1
@@ -104,7 +106,7 @@ pktparser.py is an interactive shell used for parsing through pcaps. As configur
     56,1485402926.43,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,151.101.0.73
     121,1485402926.52,User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4,23.207.174.1
 
-## Detailed packet info:
+## Detailed packet info, scapy style:
 
     pktparser>>> pktshow 3
     ###[ Ethernet ]### 
@@ -130,7 +132,7 @@ pktparser.py is an interactive shell used for parsing through pcaps. As configur
             dport     = http
 
 
-## See all unique UserAgents in the pcap: 
+## Unique UserAgents in the pcap: 
 
     pktparser>>> uaunique
     Vary: Accept-Encoding, User-Agent
@@ -138,7 +140,7 @@ pktparser.py is an interactive shell used for parsing through pcaps. As configur
     User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:43.0) Gecko/20100101 Firefox/43.0 Iceweasel/43.0.4
 
 
-## Show all http get requests: 
+## Http get requests: 
 
     pktparser>>> httpget
     ############################################
@@ -162,7 +164,7 @@ pktparser.py is an interactive shell used for parsing through pcaps. As configur
 
 
 
-## Show all http post requests: 
+## Http post requests: 
 
     pktparser>>> httppost
     ############################################
@@ -186,7 +188,7 @@ pktparser.py is an interactive shell used for parsing through pcaps. As configur
     Content-Type: application/ocsp-request
     Connection: keep-alive
 
-## Show all dns queries: 
+## Dns queries: 
 
     pktparser>>> load dns.pcap
     <bound method PacketList.summary of <dns.pcap: TCP:0 UDP:24 ICMP:0 Other:0>>
